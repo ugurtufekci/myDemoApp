@@ -12,13 +12,19 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App
 {
-    public static boolean search(ArrayList<Integer> array, int e) {
+    public static boolean search(ArrayList<Integer> array, int e,int f) {
       System.out.println("inside search");
+	int temp=0;
+	int carpim=1;
       if (array == null) return false;
-
-      for (int elt : array) {
-        if (elt == e) return true;
-      }
+	for(int s : array){
+		 temp +=s;
+	}
+	if(e<0 || f<0)
+		return false;
+     	carpim=e*f;
+	if (carpim <= temp)
+		return true; 
       return false;
     }
 
@@ -27,7 +33,7 @@ public class App
 
         get("/", (req, res) -> "Hello, World");
 
-        post("/compute", (req, res) -> {
+        post("/compute", (req, res) -> {  
           //System.out.println(req.queryParams("input1"));
           //System.out.println(req.queryParams("input2"));
 
@@ -45,8 +51,11 @@ public class App
 
           String input2 = req.queryParams("input2").replaceAll("\\s","");
           int input2AsInt = Integer.parseInt(input2);
+          String input3 = req.queryParams("input3").replaceAll("\\s","");
+          int input3AsInt = Integer.parseInt(input3);
 
-          boolean result = App.search(inputList, input2AsInt);
+
+          boolean result = App.search(inputList, input2AsInt,input3AsInt);
 
           Map map = new HashMap();
           map.put("result", result);

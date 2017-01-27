@@ -35,23 +35,35 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
+  
     } public void testFound() {
-      ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4));
-      assertTrue(new App().search(array, 4));
+      ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(5, 10, 15, 20));
+      assertTrue(new App().search(array, 4,10));
     }
 
     public void testNotFound() {
-      ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4));
-      assertFalse(new App().search(array, 5));
+      ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(5,6,7,8));
+      assertFalse(new App().search(array, 9,15));
     }
+
+    public void Negative(){
+     ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(5,55,89,44));
+     assertFalse(new App().search(array,-5,10)); 
+    }
+
+    public void Negative2(){
+     ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(7,34,5,100));
+     assertFalse(new App().search(array,5,-11)); 
+    }
+
 
     public void testEmptyArray() {
       ArrayList<Integer> array = new ArrayList<Integer>();
-      assertFalse(new App().search(array, 1));
+      assertFalse(new App().search(array, 1,1));
     }
 
     public void testNull() {
-      assertFalse(new App().search(null, 1));
+      assertFalse(new App().search(null, 1,1));
     }
 
 }
