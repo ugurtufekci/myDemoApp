@@ -3,3 +3,4 @@ Ugur Tufekci
 10:14 pm
 
 [![Build Status](https://travis-ci.org/ugurtufekci/myDemoApp.svg?branch=master)](https://travis-ci.org/ugurtufekci/myDemoApp)
+Demo site: https://radiant-mesa-24193.herokuapp.com/compute
