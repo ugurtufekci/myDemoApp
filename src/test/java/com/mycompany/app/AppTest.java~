@@ -46,12 +46,12 @@ public class AppTest
       assertFalse(new App().search(array, 9,15));
     }
 
-    public void testNegative(){
+    public void Negative(){
      ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(5,55,89,44));
      assertFalse(new App().search(array,-5,10)); 
     }
 
-    public void testNegative2(){
+    public void Negative2(){
      ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(7,34,5,100));
      assertFalse(new App().search(array,5,-11)); 
     }
